@@ -14,11 +14,13 @@ use Illuminate\Validation\ValidationException;
 class UserController extends Controller
 {
     /**
+    /**
      * Display a listing of the users.
      */
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
-        $users = User::paginate(10);
+        $items = $request->query("items",10);
+        $users = User::paginate($items);    
         
         return response()->json([
             'success' => true,
