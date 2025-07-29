@@ -14,6 +14,12 @@
                 </div>
             </div>
 
+            @if (session('success'))
+    <div class="bg-green-100 text-green-800 px-4 py-3 rounded mb-4">
+        {{ session('success') }}
+    </div>
+@endif
+
             <div class="overflow-x-auto">
                 <table class="min-w-full">
                     <thead class=" text-zinc-700">

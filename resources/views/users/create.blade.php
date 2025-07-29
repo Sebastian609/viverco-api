@@ -15,32 +15,47 @@
             </div>
 
             <div class="overflow-x-auto bg-white rounded-xl p-4">
-                <form class="grid grid-cols-2 gap-8" action="{{ route('users.store') }}" method="POST">
+                <form class="grid grid-cols-3 gap-8" action="{{ route('users.store') }}" method="POST">
                     @csrf
             
                     <div class="flex flex-col">
                         <label for="name" class="text-sm">Nombre</label>
-                        <input name="name" class="border-b-2 border-slate-800 p-2" type="text" placeholder="Ingresa nombre">
+                        <input name="name" class="border-b-2 border-slate-800 p-2" value="{{ old('name')}}" type="text" placeholder="Ingresa nombre">
+                        @error('name')
+                            <div class="text-red-500 text-sm">{{ $message }}</div>
+                        @enderror
                     </div>
             
                     <div class="flex flex-col">
                         <label for="email" class="text-sm">Correo</label>
                         <input name="email" class="border-b-2 border-slate-800 p-2" type="email" placeholder="test@mail.com">
+                        @error('email')
+                            <div class="text-red-500 text-sm">{{ $message }}</div>
+                        @enderror
                     </div>
             
                     <div class="flex flex-col">
                         <label for="email_confirmation" class="text-sm">Confirmar correo</label>
                         <input name="email_confirmation" class="border-b-2 border-slate-800 p-2" type="email" placeholder="test@mail.com">
+                        @error('email_confirmation')
+                            <div class="text-red-500 text-sm">{{ $message }}</div>
+                        @enderror
                     </div>
             
                     <div class="flex flex-col">
                         <label for="password" class="text-sm">Contraseña</label>
                         <input name="password" class="border-b-2 border-slate-800 p-2" type="password" placeholder="Contraseña">
+                        @error('password')
+                            <div class="text-red-500 text-sm">{{ $message }}</div>
+                        @enderror
                     </div>
             
                     <div class="flex flex-col">
                         <label for="password_confirmation" class="text-sm">Confirmar contraseña</label>
                         <input name="password_confirmation" class="border-b-2 border-slate-800 p-2" type="password" placeholder="Confirmar contraseña">
+                        @error('password_confirmation')
+                            <div class="text-red-500 text-sm">{{ $message }}</div>
+                        @enderror
                     </div>
             
                     <div class="col-span-2">
