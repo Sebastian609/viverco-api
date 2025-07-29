@@ -4,7 +4,7 @@
     <div class="container mx-auto px-2 py-2 sm:px-2 lg:px-8">
         <div class="bg-gray-100  rounded-xl overflow-hidden">
             <div class="mb-8 flex justify-between items-center">
-                <h2 class="text-3xl font-medium">Usuarios</h2>
+                <h2 class="text-3xl font-bold">Usuarios</h2>
 
                 <div>
                     <a href="users/create" class="bg-zinc-900 px-4 py-2 text-white rounded-xl flex flex-row gap-2 items-center">

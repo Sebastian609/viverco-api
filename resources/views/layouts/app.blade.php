@@ -51,7 +51,14 @@
         </nav>
 
         <!-- Contenido -->
-        <main class="flex-1 overflow-y-auto p-4 bg-gray-100">
+        <main class="flex-1 overflow-y-auto bg-zinc-100  w-full">
+
+            
+            <nav class="flex bg-white w-full shadow z-30 p-4 " aria-label="Breadcrumb">
+                @include('components.breadcum')
+
+            </nav>
+        
             @yield('content')
         </main>
     </div>
