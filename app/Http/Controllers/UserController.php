@@ -18,7 +18,6 @@ class UserController extends Controller
     {
         $items = $request->query("items",10);
         $users = User::paginate($items);    
-        
-        return view("index", compact("users")); 
+        return view("users.index", compact("users")); 
     }
 } 
