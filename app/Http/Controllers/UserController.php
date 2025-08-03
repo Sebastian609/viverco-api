@@ -15,11 +15,16 @@ class UserController extends Controller
 {
 
     public function index(Request $request)
-    {
-        $items = $request->query("items", 10);
-        $users = User::orderByDesc("created_at")->paginate($items);
-        return view("users.index", compact("users"));
-    }
+{
+    $items = $request->query("items", 10);
+    
+    $users = User::select('id', 'name', 'email', 'created_at')
+                 ->orderByDesc("created_at")
+                 ->simplePaginate($items); // Usa paginate() si necesitas el total
+
+    return view("users.index", compact("users"));
+}
+
 
     public function store(Request $request)
     {
